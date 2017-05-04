@@ -1,0 +1,270 @@
+A N A NALYSIS OF R ADIO M ETEOR D ETECTION
+{ C HARLES P OWELL }
+
+E XETER M ATHEMATICS S CHOOL
+
+O VERVIEW
+
+D ETECTION B Y I MAGE A NALYSIS
+
+T EMPORAL , S PATIAL & A NTENNA T YPE VARIATION
+
+Meteors have three stages to their lives. They
+start as rocky or metallic bodies in space,
+where they are known as meteoroids. Once
+a meteoroid enters the Earth’s atmosphere, it
+is heated by friction, and this extreme heat
+ionises the air around the meteor. This creates
+a visible streak which is known as a ‘shooting star’. If any of the meteor makes it to the
+ground, it becomes a meteorite. The ionised
+air around the meteor reflects radio waves.
+This is the fundamental principle behind radio Figure 1: 3D Waterfall
+meteor detection. The detection starts with a Plot
+transmitting antenna sending out pulses, or a
+continuous signal, into the upper atmosphere. The signal reflects off of
+the ionised trail left by the meteor, and is received by another antenna.
+The way this signal is visualised is typically as a ‘waterfall’ plot (figure 1). Alternatively, software is used to count meteors from the signal.
+
+The idea of detection by image analysis
+is to identify areas of the image with a
+distinct signal, which are considered to
+be meteors (note the large yellow area
+in figure 1). I have chosen root mean
+square difference as a method of identifying distinct signals. The method
+works by calculating a measure of the
+difference between corresponding pixels in two images: the signal image,
+and a ‘baseline’ image. In order to test Figure 2: RMS difference vs.
+how well this method works, I tested RMOB count
+for correlation with a set of data that is
+known to work: RMOB counts. These are hourly detection counts, also
+used in my other studies. The result is a correlation coefficient (using
+Pearson’s Moment) of r = 0.6165, with a p-value of p = 4.05 · 10−214 ,
+suggesting a correlation between the two data sets (figure 2).
+
+Temporal Variation
+
+W HAT DATA AM I USING ?
+
+Z ENITHAL H OURLY R ATE
+
+For each study I present, the source
+of my data is the RMOB organisation
+[1]. Started as a group of radio observers hoping to communicate meteor
+shower results more easily, this group
+has grown into a worldwide network
+of radio meteor observation, with each
+observers results available for use.
+The data itself is an hourly detection
+count. This data is available in one
+month long sets, as images (figure 8) or
+text.
+
+Formula
+I have modified the formula for Zenithal Hourly Rate to be used for
+radio meteor detection. The formula used for visual detection is equation 1, where F is a correction factor for field of view, r6.5−m corrects
+for the limiting magnitude, and HR is the actual visual hourly rate. The
+equation has a flaw: the sin function is used to correct for the height of
+the radiant (where the meteors ‘appear’ from) above the horizon. This
+would result in a negative hourly rate with a radiant below the horizon,
+though meteors are still seen.
+Figure 8: RMOB data in image
+format
+
+I chose to store the text data locally to
+aid analysis, rather than accessing the
+internet each time more data is needed.
+I did this by storing each distinct observer as a Python ‘object’ – a collection
+of information about a single real-life
+object.
+This included the location
+of the observer and information on
+their detection setup (which antenna, Figure 9: Number of observers
+frequencies, etc.) allowing easy access contributing each month
+to this information. Each observer also
+included a list of all the dates where they had data available, with
+an associated ‘entry’ – a single month’s data, which contained a file
+location to access the data. This easy access made analysis much easier.
+Figure 9 shows the number of observers contributing for each month
+since RMOB text records started.
+Apart from a sudden drop in 2005, the
+number of observers is constantly increasing - good news for radio meteor
+detection analysis! Figure 10 shows
+the global reach of the RMOB data. Figure 10: Locations of obHowever, it is clear that most data is servers (where known)
+from Europe. Overall, there are 3.8
+million hourly counts, from 345 observers.
+
+R EFERENCES
+[1]
+
+Radio Meteor Observation Bulletin. URL: rmob.org.
+
+[2] W. Singer et al. “Diurnal and annual variations of meteor rates at
+latitudes betwen 69◦ N and 35◦ S”. In: 17th ESA Symposium on European Rocket and Balloon Programmes and Related Research (2005).
+
+HR · F · r6.5−m
+ZHR =
+sin (h)
+
+(1)
+
+N −b
+ZHR = 1 h 
+2 + π
+
+(2)
+
+My own correction to this is shown in equation 2 (the denominator),
+where b is the background hourly rate, N is the actual hourly rate, and
+h is the angular height of the radiant above the horizon. F and r6.5−m
+are no longer needed since I assume a field of view covering the whole
+sky, and the population index model is not valid, since an incredibly
+large number of meteors would be detected by radios, but aren’t.
+
+Validity
+In order to test the validity of equation 2, I used it to calculate the
+theoretical ZHR for 6 common meteors showers for each observer, for
+years between 2007 and 2016. Most of the results correlate well with
+the expected visual data. The results do not all have values similar
+to those expected, though they correlate well since an increase in the
+visual results is reflected by an increase in radio results – the offset is
+likely due to an absent correction factor. In order to determine this,
+I used the results to calculate a theoretical field of view and limiting
+magnitude. The results show that the theoretical limiting magnitude of
+the antennas used is ∼ 6.75, and the theoretical field of view is ∼ 30%.
+This field of view should be larger, as should the limiting magnitude.
+This indicates that there is an offset that is not present as a correction
+factor. This is expected, however, since I had no data available for
+field of view and so it was not included. The field of view is highly
+dependent on the antenna, as is the limiting magnitude.
+
+I have analysed
+the
+variation
+of
+detection counts
+and
+other
+descriptive
+characteristics of the
+Figure 3: Variation in mean
+data
+over
+hourly detection count since 2000
+time. There
+by year
+is a significant increase in detection counts between 2005
+and 2011 (see figure 3), which correlates to the
+minimum of the solar cycle. This indicates
+that the activity of the Sun (and most likely the
+solar wind) prevents some radio meteor detection. This is not unreasonable, since when
+the solar wind has a greater intensity, there is
+a greater electron density, which will influence
+radio signals.
+
+As well as
+this, my results
+(figure 4) show
+an increase
+in detection
+counts
+in
+the middle
+of the year,
+which persists for the
+rest of the Figure 4: Variation in mean
+year.
+This hourly detection count over a
+could be due year
+to an increased number of meteor showers, or other
+effects which I have not studied. I have found
+little variation of detection counts during each
+month, as expected, since there are few effects
+that vary on a monthly basis. With a 1% significance level, there is no difference between
+daytime and night-time detection rates.
+
+Most data characteristics do not correlate well
+with latitude or longitude, implying that the
+location where a detection takes place has
+little impact on the resulting detections. As
+expected, there is a correlation between longitude and peak hour of diurnal shift. Some
+studies [2] have noted a correlation between
+latitude and the intensity of diurnal shift,
+though my results do not clearly support this.
+The implication of these findings is that, across
+the globe, the quality and quantity of radio meteor detection doesn’t change, which in itself
+suggests a uniform distribution of sporadic
+meteors in space.
+
+Variation by antenna type
+Overall, there is little variation between antenna types, and a large degree of variation
+within each antenna category, implying that
+the antenna has little effect on the results of
+radio meteor detection. However, J-pole, log
+periodic and turnstile antennas appear to produce the most extreme results. This is likely
+due to anomalous readings.
+
+D IURNAL VARIATION OF M ETEOR F LUX
+Diurnal variation, also known as diurnal ‘shift’, is an observed increase
+and decrease in detection counts
+over the course of a day. Some models explain this as the Earth ‘intercepting more sporadic meteors at
+Sunrise than Sunset’, those this is
+incorrect – the same number of sporadic meteors are intercepted. In
+my own model, a correction to the
+previous, I propose that the incident
+velocity, added to Earth’s orbital ve- Figure 5: Diagram of diurnal shift
+locity at Sunrise (∼ 6am observer’s model
+local time), results in a higher intercept velocity, meaning more detections occur since more meteors reach the atmosphere (see figure 5).
+A sinusoidal function fits the
+mean diurnal shift of all available authors well (see figure 6). This indicates that my
+model, which is based around
+a cosine function, works. It
+is apparent that the diurnal
+shift occurs worldwide, and
+varies in amplitude between
+locations. This supports other
+studies, unlike my analysis of
+spatial variation.
+
+Spatial variation of diurnal shift
+Figure 7 shows the peak hour of
+an observer’s apparent diurnal
+shift in their local time, based on
+their longitude, not timezones.
+My model predicts that the peak
+hour occurs at 6am, and this
+is seen in the histogram, indicating that my model fits the
+data. There is some spreading
+out from this time, as expected
+by any set of data, though there
+is also a large number of peak
+hours at 7am. This is potentially due to changes that occur
+in the Earth’s rotation throughout a year.
+
+Figure 7: Histogram of peak hour of diurnal shift in observer’s local time
+
+Temporal variation of diurnal shift
+Over time, the peak hour of diurnal shift does not appear to increase
+or decrease, which also supports my model since I provide no reason
+for the diurnal shift to change with time. Around the time of increased
+detection rates between 2005 and 2011, diurnal shift appears to be less
+sinusoidal, indicating an increased background rate, supporting my
+conclusions from the temporal variation analysis.
+Figure 6: Diurnal shifts for various locations
+
+F UTURE W ORK
+For many results, there is yet a conclusion to be made. There are many
+variables that influence radio meteor detection in conjunction with one
+another, making isolation of a variable and consequent analysis diffi-
+
+Spatial Variation
+
+A CKNOWLEDGEMENTS
+cult. A larger set of data, with a more uniform coverage of the globe, is
+the aim for the future, as well as extensions of the analyses in order to
+refine and validate conclusions.
+
+I am indebted to the RMOB organization [1] for permission to use their
+data. Credit is also due to the Norman Lockyer Observatory, where I
+have worked on this project.
+
+

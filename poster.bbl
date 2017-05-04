@@ -1,0 +1,76 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{nty/global/}
+    \entry{rmob}{online}{}
+      \field{sortinit}{R}
+      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
+      \field{labeltitlesource}{title}
+      \field{title}{Radio Meteor Observation Bulletin}
+      \verb{url}
+      \verb rmob.org
+      \endverb
+    \endentry
+    \entry{latitudes}{article}{}
+      \name{author}{5}{}{%
+        {{hash=4bc27760567780ab6d9d61f646425470}{%
+           family={Singer},
+           familyi={S\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=3ee23c6febcbff11c0306bccfd5bcaec}{%
+           family={Zahn},
+           familyi={Z\bibinitperiod},
+           given={U.},
+           giveni={U\bibinitperiod},
+           prefix={von},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=42e6c899f96f2f6732e203c84421f4cb}{%
+           family={Batista},
+           familyi={B\bibinitperiod},
+           given={P.\bibnamedelimi P.},
+           giveni={P\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=8d661ed5fe7edb8fe38d00395eb05cb7}{%
+           family={Fuller},
+           familyi={F\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=f03a767191f06d7ac29ae44a4f0ab9c1}{%
+           family={Latteck},
+           familyi={L\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{e8dd4e93742825776449b573e09561a3}
+      \strng{fullhash}{fcea30283256586ec6cf00627ee30ced}
+      \strng{authornamehash}{e8dd4e93742825776449b573e09561a3}
+      \strng{authorfullhash}{fcea30283256586ec6cf00627ee30ced}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{17th ESA Symposium on European Rocket and Balloon Programmes and Related Research}
+      \field{title}{Diurnal and annual variations of meteor rates at latitudes betwen 69$^{\circ}$N and 35$^{\circ}$S}
+      \field{year}{2005}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

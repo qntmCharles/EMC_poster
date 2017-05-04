@@ -1,0 +1,15 @@
+[0] Config.pm:354> INFO - This is Biber 2.6
+[0] Config.pm:357> INFO - Logfile is 'poster.blg'
+[75] biber:302> INFO - === Thu Mar  2, 2017, 10:44:56
+[194] Biber.pm:359> INFO - Reading 'poster.bcf'
+[327] Biber.pm:823> INFO - Found 2 citekeys in bib section 0
+[347] Biber.pm:3658> INFO - Processing section 0
+[526] Biber.pm:3828> INFO - Looking for bibtex format file 'sample.bib' for section 0
+[551] bibtex.pm:1425> INFO - Decoding LaTeX character macros into UTF-8
+[554] bibtex.pm:1282> INFO - Found BibTeX data source 'sample.bib'
+[580] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[580] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[580] Biber.pm:3487> INFO - Sorting list 'nty/global/' of type 'entry' with scheme 'nty' and locale 'en-US'
+[580] Biber.pm:3493> INFO - No sort tailoring available for locale 'en-US'
+[584] bbl.pm:597> INFO - Writing 'poster.bbl' with encoding 'ascii'
+[585] bbl.pm:701> INFO - Output to poster.bbl
